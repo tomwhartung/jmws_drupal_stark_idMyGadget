@@ -39,6 +39,26 @@
 
   </div>
 
+  <div id="foobar">
+
+    <?php if ($page['foobar']): ?>    
+      <?php print render($page['foobar']); ?>
+    <?php else : ?>
+      <p>Hello foobar is here because we have no foobar!</p>
+    <?php endif; ?>
+
+  </div>
+
+  <div id="baz">
+
+    <?php if ($page['baz']): ?>    
+      <?php print render($page['baz']); ?>
+    <?php else : ?>
+      <p>Hello baz is here because we have no baz!</p>
+    <?php endif; ?>
+
+  </div>
+
 </div>
 
 <div id="footer">
