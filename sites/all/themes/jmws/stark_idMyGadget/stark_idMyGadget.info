@@ -5,3 +5,10 @@ version = VERSION
 core = 7.x
 stylesheets[all][] = layout.css
 
+regions[header] = Header
+regions[foobar] = Foobar
+regions[sidebar_first] = Right sidebar
+regions[sidebar] = Sidebar
+regions[content] = Content
+regions[footer] = Footer
+
