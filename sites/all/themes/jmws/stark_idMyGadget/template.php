@@ -9,11 +9,20 @@ function stark_idMyGadget_system_powered_by() {
 
 function stark_idMyGadget_page_alter( &$page ) {
   print '<p>Hi from page_alter!!!!</p>';
-
   print '<p>';
   print '</p>';
-
   print '<p>Bye from page_alter!!!!</p>';
+}
+
+/**
+ * Ok, we can mess with the username, should we want to at some point
+ */
+function stark_idMyGadget_username_NOT( $variables ) {
+  print '<p>Hi from stark_idMyGadget_username!!!!</p>';
+  print '<p>';
+  print '</p>';
+  print '<p>Bye from stark_idMyGadget_username!!!!</p>';
+  return '<p>Returned from stark_idMyGadget_username!!!!</p>';
 }
 
 /**
