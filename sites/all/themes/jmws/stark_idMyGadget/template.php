@@ -7,6 +7,15 @@ function stark_idMyGadget_system_powered_by() {
    return '<span>' . t('Oweredpay by <a href="@poweredby">Drupal</a>', array('@poweredby' => 'https://www.drupal.org')) . '</span>';
 }
 
+function stark_idMyGadget_page_alter( &$page ) {
+  print '<p>Hi from page_alter!!!!</p>';
+
+  print '<p>';
+  print '</p>';
+
+  print '<p>Bye from page_alter!!!!</p>';
+}
+
 /**
  * Allows us to see what is in $page
  * Reference: https://api.drupal.org/api/drupal/modules%21system%21system.api.php/function/hook_page_alter/7
@@ -82,15 +91,4 @@ function stark_idMyGadget_page_alter_NOT( &$page ) {
   print '</p>';
 
   print '<p>Bye from page_alter!!!!</p>';
-}
-/**
- * Want to mess with the header ... so try this ...
- * ... it does nothing, hmm....
- */
-function stark_idMyGadget_page_build( &$page ) {
-  print '<p>Hi from page_build !!!!</p>';
-  print '<p>';
-  var_dump( $page ); 
-  print '</p>';
-  print '<p>Bye from page_build!!!!</p>';
 }
