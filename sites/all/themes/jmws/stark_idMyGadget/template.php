@@ -8,9 +8,45 @@ function stark_idMyGadget_system_powered_by() {
 }
 
 function stark_idMyGadget_page_alter( &$page ) {
+  global $jmwsIdMyGadget;
+
   print '<p>Hi from page_alter!!!!</p>';
-  print '<p>';
+
+  $message1 = 'Class JmwsIdMyGadgetDrupal does not exist';
+  if ( class_exists('JmwsIdMyGadgetDrupal') ) {
+    $message1 = 'Class JmwsIdMyGadgetDrupal exists!';
+    if ( isset(JmwsIdMyGadgetDrupal::$supportedGadgetDetectors) ) {
+      $message1 .= ' And JmwsIdMyGadgetDrupal::$supportedGadgetDetectors isset!';
+    }
+  }
+  print '<p>message1: ' . $message1 . '</p>';
+
+  $message2 = 'We do not know what jmwsIdMyGadget is yet.';
+  if ( isset($jmwsIdMyGadget) )
+  {
+    if ( is_opject($jmwsIdMyGadget) )
+    {
+      $message2 = 'jmwsIdMyGadget is an instance of ' . get_class($jmwsIdMyGadget);
+    }
+    else
+    {
+      $message2 = 'jmwsIdMyGadget is not an object.';
+    }
+  }
+  else
+  {
+    $message2 = 'jmwsIdMyGadget is not set.';
+  }
+  print '<p>message2: ' . $message2;
   print '</p>';
+
+  $message3 = variable_get( 'idMyGadget_gadget_detector', 'gadget detector not set!' );
+  print '<p>message3: ' . $message3 . '</p>';
+
+  $gadget_detector_index = variable_get( 'idMyGadget_gadget_detector', 0 );
+  $message4 = 'gadget detector: ' . JmwsIdMyGadgetDrupal::$supportedGadgetDetectors[$gadget_detector_index];
+  print '<p>message4: ' . $message4 . '</p>';
+
   print '<p>Bye from page_alter!!!!</p>';
 }
 
