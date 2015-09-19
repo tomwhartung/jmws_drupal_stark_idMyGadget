@@ -10,7 +10,7 @@ function stark_idMyGadget_system_powered_by() {
 function stark_idMyGadget_page_alter( &$page ) {
   global $jmwsIdMyGadget;
 
-  print '<p>Hi from page_alter!!!!</p>';
+  print '<p>Hi from page_alter in stark_idMyGadget!!!!</p>';
 
   $message1 = 'Class JmwsIdMyGadgetDrupal does not exist';
   if ( class_exists('JmwsIdMyGadgetDrupal') ) {
@@ -24,7 +24,7 @@ function stark_idMyGadget_page_alter( &$page ) {
   $message2 = 'We do not know what jmwsIdMyGadget is yet.';
   if ( isset($jmwsIdMyGadget) )
   {
-    if ( is_opject($jmwsIdMyGadget) )
+    if ( is_object($jmwsIdMyGadget) )
     {
       $message2 = 'jmwsIdMyGadget is an instance of ' . get_class($jmwsIdMyGadget);
     }
@@ -43,11 +43,21 @@ function stark_idMyGadget_page_alter( &$page ) {
   $message3 = variable_get( 'idMyGadget_gadget_detector', 'gadget detector not set!' );
   print '<p>message3: ' . $message3 . '</p>';
 
-  $gadget_detector_index = variable_get( 'idMyGadget_gadget_detector', 0 );
-  $message4 = 'gadget detector: ' . JmwsIdMyGadgetDrupal::$supportedGadgetDetectors[$gadget_detector_index];
+  global $gadgetDetectorIndex;
+  // $gadget_detector_index = variable_get( 'idMyGadget_gadget_detector', 0 );
+  // $message4 = 'gadget detector: ' . JmwsIdMyGadgetDrupal::$supportedGadgetDetectors[$gadget_detector_index];
+  $message4 = 'gadget detector: ' . JmwsIdMyGadgetDrupal::$supportedGadgetDetectors[$gadgetDetectorIndex];
   print '<p>message4: ' . $message4 . '</p>';
 
-  print '<p>Bye from page_alter!!!!</p>';
+  global $gadgetDetectorString;
+  $message5 = 'gadgetDetectorString: ' . $gadgetDetectorString;
+  print '<p>message5: ' . $message5 . '</p>';
+
+  global $idMyGadgetClass;
+  $message6 = 'idMyGadgetClass: ' . $idMyGadgetClass;
+  print '<p>message6: ' . $message6 . '</p>';
+
+  print '<p>Bye from page_alter in stark_idMyGadget!!!!</p>';
 }
 
 /**
@@ -64,7 +74,9 @@ function stark_idMyGadget_username_NOT( $variables ) {
 /**
  * Allows us to see what is in $page
  * Reference: https://api.drupal.org/api/drupal/modules%21system%21system.api.php/function/hook_page_alter/7
- * NOTE: Does NOTHING when we have "_NOT" appended to the name!!
+ * NOTES:
+ *   This does NOTHING when we have "_NOT" appended to the name!!
+ *   This same function is in idMyGadget.module
  */
 function stark_idMyGadget_page_alter_NOT( &$page ) {
   print '<p>Hi from page_alter!!!!</p>';
