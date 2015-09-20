@@ -57,6 +57,14 @@ function stark_idMyGadget_page_alter( &$page ) {
   $message6 = 'idMyGadgetClass: ' . $idMyGadgetClass;
   print '<p>message6: ' . $message6 . '</p>';
 
+  $module_name = basename(__FILE__, '.module');
+  $message7 = 'module_name: ' . $module_name;
+  print '<p>message7: ' . $message7 . '</p>';
+
+  $path = drupal_get_path( 'module', 'idMyGadget' );
+  $message8 = 'path: ' . $path;
+  print '<p>message8: ' . $message8 . '</p>';
+
   print '<p>Bye from page_alter in stark_idMyGadget!!!!</p>';
 }
 
