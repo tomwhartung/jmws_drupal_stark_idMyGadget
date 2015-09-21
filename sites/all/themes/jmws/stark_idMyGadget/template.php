@@ -6,13 +6,64 @@
 function stark_idMyGadget_system_powered_by() {
    return '<span>' . t('Oweredpay by <a href="@poweredby">Drupal</a>', array('@poweredby' => 'https://www.drupal.org')) . '</span>';
 }
-
+/**
+ * Check that we have the device detection object, and if not, display the best error message we can.
+ */
 function stark_idMyGadget_page_alter( &$page ) {
   global $jmwsIdMyGadget;
 
-  print '<p>Hi from page_alter in stark_idMyGadget!!!!</p>';
+  print '<p>Hi from stark_idMyGadget_page_alter.</p>';
 
-  print '<p>Bye from page_alter in stark_idMyGadget!!!!</p>';
+  if (isset($jmwsIdMyGadget) ) {
+    unset( $jmwsIdMyGadget->errorMessage );
+  }
+  else {
+    stark_idMyGadget_check_idMyGadget_installation();
+  }
+
+  print '<p>Bye from stark_idMyGadget_page_alter.</p>';
+}
+/**
+ * 
+ */
+function stark_idMyGadget_check_idMyGadget_installation() {
+  global $jmwsIdMyGadget;
+
+  require_once( 'idMyGadget/JmwsIdMyGadgetNoDetection.php' );
+  $jmwsIdMyGadget = new JmwsIdMyGadgetNoDetection();
+  $jmwsIdMyGadget->errorMessage = IDMYGADGET_UNKNOWN_ERROR;
+
+  $idMyGadget_module_exists = module_exists( 'idMyGadget' );
+  print '<p>$idMyGadget_module_exists: ' . $idMyGadget_module_exists . '</p>';
+
+  $rooted_module_file_name =  DRUPAL_ROOT . '/' . JmwsIdMyGadgetNoDetection::IDMYGADGET_MODULE_FILE;
+  print '<p>$rooted_module_file_name: ' . $rooted_module_file_name . '</p>';
+
+  if ( file_exists($rooted_module_file_name) )  {
+    print '<p>It is installed but probably not active</p>';
+  }
+  else {
+    $jmwsIdMyGadget->errorMessage = IDMYGADGET_NOT_INSTALLED;
+    // print '<p>It is NOT installed</p>';
+  }
+
+//if ( ! function_exists( 'get_plugins' ) )
+//{
+//require_once ABSPATH . 'wp-admin/includes/plugin.php';
+//}
+//$all_plugins = get_plugins();
+//if ( ! is_plugin_active(JmwsIdMyGadgetNoDetection::IDMYGADGET_PLUGIN_FILE) )
+//{
+//$jmws_idMyGadget_for_wordpress_is_active = FALSE;
+//$jmwsIdMyGadget->errorMessage = IDMYGADGET_NOT_ACTIVE;
+//}
+//}
+//else
+//{
+//$jmws_idMyGadget_for_wordpress_is_active = FALSE;
+//$jmws_idMyGadget_for_wordpress_is_installed = FALSE;
+//
+  drupal_set_message( t($jmwsIdMyGadget->errorMessage), 'error' );
 }
 
 /**
