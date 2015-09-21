@@ -13,27 +13,27 @@ if( !defined('DS') )
  */
 define( 'IDMYGADGET_ERROR_PROLOG',
 	'<div class="idmygadget-error"><p>This theme depends on the ' .
-	'<a class="idmygadget-error" href="https://github.com/tomwhartung/jmws_idMyGadget_for_wordpress" target="_blank">' .
-		'jmws_idMyGadget_for_wordpress plugin</a>.</p>' );
+	'<a class="idmygadget-error" href="https://github.com/tomwhartung/jmws_idMyGadget_for_drupal" target="_blank">' .
+		'jmws_idMyGadget_for_drupal</a> module.</p>' );
 /**
  * Error message for when the plugin is not installed
  */
 define( 'IDMYGADGET_NOT_INSTALLED',
 	IDMYGADGET_ERROR_PROLOG .
-	'<p>Please <span class="idmygadget-error">install and activate the plugin,</span> which is available on github, or use a different theme.</p></div>' );
+	'<p>Please <span class="idmygadget-error">install and activate the module,</span> which is available on github, or use a different theme.</p></div>' );
 /**
  * Error message for when the plugin is not active
  */
 define( 'IDMYGADGET_NOT_ACTIVE',
 	IDMYGADGET_ERROR_PROLOG .
-	'<p>Please <span class="idmygadget-error">activate the plugin</span> in the Wordpress administration console, or use a different theme.</p></div>' );
+	'<p>Please <span class="idmygadget-error">activate the module</span> in the Drupal administration console, or use a different theme.</p></div>' );
 /**
  * Error message for when there is an unknown error (bug?)
  */
 define( 'IDMYGADGET_UNKNOWN_ERROR',
 	IDMYGADGET_ERROR_PROLOG .
-	'<p>The jmwsIdMyGadget object is missing, so the jmws_idMyGadget_for_wordpress plugin must be broken.</p>' .
-	'<p>Please fix the plugin or use a different theme.</p></div>' );
+	'<p>The jmwsIdMyGadget object is missing, so the jmws_idMyGadget_for_drupal module must be broken.</p>' .
+	'<p>Please fix the module or use a different theme.</p></div>' );
 
 class JmwsIdMyGadgetNoDetection
 {
