@@ -40,7 +40,7 @@ class JmwsIdMyGadgetNoDetection
 	/**
 	 * Location of the plugin file.  We need to know if it's not installed and active.
 	 */
-	const IDMYGADGET_PLUGIN_FILE = 'jmws_idMyGadget_for_wordpress/jmws_idMyGadget_for_wordpress.php';
+	const IDMYGADGET_MODULE_FILE = 'sites/all/modules/jmws/idMyGadget/idMyGadget/JmwsIdMyGadgetDrupal.php';
 	/**
 	 * Error message, set only when there's an error
 	 * @var type String
