@@ -33,14 +33,15 @@ function stark_idMyGadget_check_idMyGadget_installation() {
   $jmwsIdMyGadget = new JmwsIdMyGadgetNoDetection();
   $jmwsIdMyGadget->errorMessage = IDMYGADGET_UNKNOWN_ERROR;
 
-  $idMyGadget_module_exists = module_exists( 'idMyGadget' );
-  print '<p>$idMyGadget_module_exists: ' . $idMyGadget_module_exists . '</p>';
-
   $rooted_module_file_name =  DRUPAL_ROOT . '/' . JmwsIdMyGadgetNoDetection::IDMYGADGET_MODULE_FILE;
-  print '<p>$rooted_module_file_name: ' . $rooted_module_file_name . '</p>';
 
   if ( file_exists($rooted_module_file_name) )  {
-    print '<p>It is installed but probably not active</p>';
+    if ( module_exists('idMyGadget') ) {
+      $jmwsIdMyGadget->errorMessage = IDMYGADGET_UNKNOWN_ERROR;
+    }
+    else {
+      $jmwsIdMyGadget->errorMessage = IDMYGADGET_NOT_ACTIVE;
+    }
   }
   else {
     $jmwsIdMyGadget->errorMessage = IDMYGADGET_NOT_INSTALLED;
