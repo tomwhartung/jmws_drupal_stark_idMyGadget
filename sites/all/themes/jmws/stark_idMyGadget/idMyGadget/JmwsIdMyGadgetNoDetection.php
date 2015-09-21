@@ -19,13 +19,13 @@ define( 'IDMYGADGET_ERROR_PROLOG',
  * Error message for when the plugin is not installed
  */
 define( 'IDMYGADGET_NOT_INSTALLED',
-	IDMYGADGET_ERROR_PROLOG .
+	IDMYGADGET_ERROR_PROLOG . '<p>It appears this module is not installed.</p>' .
 	'<p>Please <span class="idmygadget-error">install and activate the module,</span> which is available on github, or use a different theme.</p></div>' );
 /**
  * Error message for when the plugin is not active
  */
 define( 'IDMYGADGET_NOT_ACTIVE',
-	IDMYGADGET_ERROR_PROLOG .
+	IDMYGADGET_ERROR_PROLOG . '<p>It appears this module is installed but not active.</p>' .
 	'<p>Please <span class="idmygadget-error">activate the module</span> in the Drupal administration console, or use a different theme.</p></div>' );
 /**
  * Error message for when there is an unknown error (bug?)
