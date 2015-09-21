@@ -4,4 +4,5 @@ package = Core
 version = VERSION
 core = 7.x
 stylesheets[all][] = layout.css
+stylesheets[all][] = idMyGadget/idMyGadget.css
 
