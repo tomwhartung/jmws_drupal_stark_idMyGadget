@@ -21,6 +21,8 @@ function stark_idMyGadget_page_alter( &$page ) {
     stark_idMyGadget_check_idMyGadget_installation();
   }
 
+  print '<p>$jmwsIdMyGadget->isEnabled(): ' . $jmwsIdMyGadget->isEnabled() . '</p>';
+
   print '<p>Bye from stark_idMyGadget_page_alter.</p>';
 }
 /**
@@ -87,7 +89,7 @@ function stark_idMyGadget_username_NOT( $variables ) {
  *   This same function is in idMyGadget.module
  */
 function stark_idMyGadget_page_alter_NOT( &$page ) {
-  print '<p>Hi from page_alter!!!!</p>';
+  print '<p>Hi from stark_idMyGadget_page_alter_NOT!!!!</p>';
 
   print '<p>';
   if ( isset($page['page_top']) ) {
@@ -158,19 +160,5 @@ function stark_idMyGadget_page_alter_NOT( &$page ) {
   $message3 = variable_get( 'idMyGadget_gadget_detector', 'gadget detector not set!' );
   print '<p>message3: ' . $message3 . '</p>';
 
-  global $gadgetDetectorIndex;
-  // $gadget_detector_index = variable_get( 'idMyGadget_gadget_detector', 0 );
-  // $message4 = 'gadget detector: ' . JmwsIdMyGadgetDrupal::$supportedGadgetDetectors[$gadget_detector_index];
-  $message4 = 'gadget detector: ' . JmwsIdMyGadgetDrupal::$supportedGadgetDetectors[$gadgetDetectorIndex];
-  print '<p>message4: ' . $message4 . '</p>';
-
-  global $gadgetDetectorString;
-  $message5 = 'gadgetDetectorString: ' . $gadgetDetectorString;
-  print '<p>message5: ' . $message5 . '</p>';
-
-  global $idMyGadgetClass;
-  $message6 = 'idMyGadgetClass: ' . $idMyGadgetClass;
-  print '<p>message6: ' . $message6 . '</p>';
-
-  print '<p>Bye from page_alter!!!!</p>';
+  print '<p>Bye from stark_idMyGadget_page_alter_NOT!!!!</p>';
 }
