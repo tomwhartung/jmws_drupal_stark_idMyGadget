@@ -71,6 +71,15 @@ class JmwsIdMyGadgetModuleMissing
 	{
 		$this->setGadgetString();
 	}
+
+	/**
+	 * When this class is being used, device detection is not enabled
+	 */
+	public function isEnabled()
+	{
+		return FALSE;
+	}
+
 	/**
 	 * The gadget string is read-only!
 	 */
