@@ -31,11 +31,11 @@ function stark_idMyGadget_page_alter( &$page ) {
 function stark_idMyGadget_check_idMyGadget_installation() {
   global $jmwsIdMyGadget;
 
-  require_once( 'idMyGadget/JmwsIdMyGadgetNoDetection.php' );
-  $jmwsIdMyGadget = new JmwsIdMyGadgetNoDetection();
+  require_once( 'idMyGadget/JmwsIdMyGadgetModuleMissing.php' );
+  $jmwsIdMyGadget = new JmwsIdMyGadgetModuleMissing();
   $jmwsIdMyGadget->errorMessage = IDMYGADGET_UNKNOWN_ERROR;
 
-  $rooted_module_file_name =  DRUPAL_ROOT . '/' . JmwsIdMyGadgetNoDetection::IDMYGADGET_MODULE_FILE;
+  $rooted_module_file_name =  DRUPAL_ROOT . '/' . JmwsIdMyGadgetModuleMissing::IDMYGADGET_MODULE_FILE;
 
   if ( file_exists($rooted_module_file_name) )  {
     if ( module_exists('idMyGadget') ) {
@@ -55,7 +55,7 @@ function stark_idMyGadget_check_idMyGadget_installation() {
 //require_once ABSPATH . 'wp-admin/includes/plugin.php';
 //}
 //$all_plugins = get_plugins();
-//if ( ! is_plugin_active(JmwsIdMyGadgetNoDetection::IDMYGADGET_PLUGIN_FILE) )
+//if ( ! is_plugin_active(JmwsIdMyGadgetModuleMissing::IDMYGADGET_PLUGIN_FILE) )
 //{
 //$jmws_idMyGadget_for_wordpress_is_active = FALSE;
 //$jmwsIdMyGadget->errorMessage = IDMYGADGET_NOT_ACTIVE;

@@ -35,7 +35,7 @@ define( 'IDMYGADGET_UNKNOWN_ERROR',
 	'<p>The jmwsIdMyGadget object is missing, so the jmws_idMyGadget_for_drupal module must be broken.</p>' .
 	'<p>Please fix the module or use a different theme.</p></div>' );
 
-class JmwsIdMyGadgetNoDetection
+class JmwsIdMyGadgetModuleMissing
 {
 	/**
 	 * Location of the plugin file.  We need to know if it's not installed and active.
