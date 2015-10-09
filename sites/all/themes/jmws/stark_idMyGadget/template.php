@@ -26,7 +26,8 @@ function stark_idMyGadget_page_alter( &$page ) {
   print '<p>Bye from stark_idMyGadget_page_alter.</p>';
 }
 /**
- * 
+ * Check whether the IdMyGadget module is installed and enabled,
+ * If something is wrong, generate the most accurate error message possible
  */
 function stark_idMyGadget_check_idMyGadget_installation() {
   global $jmwsIdMyGadget;
@@ -50,22 +51,6 @@ function stark_idMyGadget_check_idMyGadget_installation() {
     // print '<p>It is NOT installed</p>';
   }
 
-//if ( ! function_exists( 'get_plugins' ) )
-//{
-//require_once ABSPATH . 'wp-admin/includes/plugin.php';
-//}
-//$all_plugins = get_plugins();
-//if ( ! is_plugin_active(JmwsIdMyGadgetModuleMissing::IDMYGADGET_PLUGIN_FILE) )
-//{
-//$jmws_idMyGadget_for_wordpress_is_active = FALSE;
-//$jmwsIdMyGadget->errorMessage = IDMYGADGET_NOT_ACTIVE;
-//}
-//}
-//else
-//{
-//$jmws_idMyGadget_for_wordpress_is_active = FALSE;
-//$jmws_idMyGadget_for_wordpress_is_installed = FALSE;
-//
   drupal_set_message( t($jmwsIdMyGadget->errorMessage), 'error' );
 }
 
