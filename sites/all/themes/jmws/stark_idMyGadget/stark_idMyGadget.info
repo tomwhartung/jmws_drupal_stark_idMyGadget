@@ -1,8 +1,22 @@
+;
+; Documentation is here:
+;   https://www.drupal.org/node/171205
+;
 name = Stark_IdMyGadget
-description = This theme demonstrates Drupal's default HTML markup and CSS styles. To learn how to build your own theme and override Drupal's default code, see the <a href="http://drupal.org/theme-guide">Theming Guide</a>.
-package = Core
-version = VERSION
+description = Adding device detection to a theme demonstrates Drupal's default HTML markup and CSS styles. To learn how to build your own theme and override Drupal's default code, see the <a href="http://drupal.org/theme-guide">Theming Guide</a>.
+package = jmws
+version = 1.0
 core = 7.x
 stylesheets[all][] = layout.css
 stylesheets[all][] = idMyGadget/idMyGadget.css
-
+;
+; Drupal 7 default regions (for reference only):
+; ----------------------------------------------
+; Note: defining regions explicitly disables all default regions!
+;   regions[header] = Header
+;   regions[highlighted] = Highlighted
+;   regions[help] = Help
+;   regions[content] = Content
+;   regions[sidebar_first] = Left sidebar
+;   regions[sidebar_second] = Right sidebar
+;   regions[footer] = Footer
