@@ -4,6 +4,9 @@
 /*
  * Styles for device-dependent headings
  */
+#name-and-slogan {  /* defined in original page.tpl.php; see README.md */
+	display: block;
+}
 .logo-file-desktop {
 	display: inline;
 	float: left;
@@ -18,25 +21,37 @@
 }
 .logo-file-tablet {
 	display: inline;
-	float: left;
+	float: right;
 	height: 100px;
 	width: 100px;
+}
+.site-name-title-desktop {
+	display: inline;
+	float: right;
+}
+.site-name-title-phone {
+	display: inline;
+	float: right;
+}
+.site-name-title-tablet {
+	display: inline;
+	float: left;
 }
 .site-name-desktop,
 .site-name-phone,
 .site-name-tablet {
-	display: inline;
-	float: right;
+	display: block;
 }
 .site-title-desktop,
 .site-title-phone,
 .site-title-tablet {
-	display: inline;
-	float: right;
+	display: block;
 }
 .site-description-desktop,
 .site-description-phone,
 .site-description-tablet {
+	clear: both;
+	display: block;
 	font-style: italic;
 	text-decoration: underline;
 }
