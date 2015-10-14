@@ -79,7 +79,7 @@ global $jmwsIdMyGadget;
     <div id="header"><div class="section clearfix">
 
       <?php if ( isset($jmwsIdMyGadget) && $jmwsIdMyGadget->isEnabled() ) : ?>
-        <?php echo $jmwsIdMyGadget->getLogoTitleDescriptionHtml($front_page) ?>
+        <?php echo $jmwsIdMyGadget->getLogoNameTitleDescriptionHtml($front_page) ?>
       <?php else : ?>
         <?php if ($logo): ?>
           <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
