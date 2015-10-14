@@ -1,6 +1,49 @@
 /*
  * Styles for use by idMyGadget code
  */
+/*
+ * Styles for device-dependent headings
+ */
+.logo-file-desktop {
+	display: inline;
+	float: left;
+	height: 200px;
+	width: 200px;
+}
+.logo-file-phone {
+	display: inline;
+	float: left;
+	height: 50px;
+	width: 50px;
+}
+.logo-file-tablet {
+	display: inline;
+	float: left;
+	height: 100px;
+	width: 100px;
+}
+.site-name-desktop,
+.site-name-phone,
+.site-name-tablet {
+	display: inline;
+	float: right;
+}
+.site-title-desktop,
+.site-title-phone,
+.site-title-tablet {
+	display: inline;
+	float: right;
+}
+.site-description-desktop,
+.site-description-phone,
+.site-description-tablet {
+	font-style: italic;
+	text-decoration: underline;
+}
+
+/*
+ * Error messages!
+ */
 div.idmygadget-error {
 	background-color: white;
 	border: solid 2px red;
