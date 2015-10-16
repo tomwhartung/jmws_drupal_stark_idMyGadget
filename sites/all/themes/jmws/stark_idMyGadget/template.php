@@ -12,9 +12,6 @@ function stark_idMyGadget_system_powered_by() {
  */
 function stark_idMyGadget_page_alter( &$page ) {
   global $jmwsIdMyGadget;
-  global $base_url;
-
-  print '<p>Hi from stark_idMyGadget_page_alter.</p>';
 
   if (isset($jmwsIdMyGadget) ) {
     unset( $jmwsIdMyGadget->errorMessage );
@@ -23,18 +20,12 @@ function stark_idMyGadget_page_alter( &$page ) {
     stark_idMyGadget_check_idMyGadget_installation();
   }
 
-  $logoTitleDescription = $jmwsIdMyGadget->getLogoNameTitleDescriptionHtml($base_url);
-  print '<p>strlen($logoTitleDescription): ' . strlen($logoTitleDescription) . '</p>';
-  print '<p>htmlspecialchars($logoTitleDescription):<br />' . htmlspecialchars($logoTitleDescription) . '</p>';
-
-  // Doing this is a horrible idea, because all the articles etc are stored in variables
-  //
-//  print '<p>get_defined_vars():';
-//  $vars = get_defined_vars();
-//  print_r($vars);
-//  print '</p>';
-
-  print '<p>Bye from stark_idMyGadget_page_alter.</p>';
+//  global $base_url;
+//  print '<p>Hi from stark_idMyGadget_page_alter.</p>';
+//  $logoTitleDescription = $jmwsIdMyGadget->getLogoNameTitleDescriptionHtml($base_url);
+//  print '<p>strlen($logoTitleDescription): ' . strlen($logoTitleDescription) . '</p>';
+//  print '<p>htmlspecialchars($logoTitleDescription):<br />' . htmlspecialchars($logoTitleDescription) . '</p>';
+//  print '<p>Bye from stark_idMyGadget_page_alter.</p>';
 }
 /**
  * Check whether the IdMyGadget module is installed and enabled,
