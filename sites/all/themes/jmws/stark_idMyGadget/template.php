@@ -1,13 +1,5 @@
 <?php
 /**
- * Override fcn that returns HTML for the Powered by Drupal text.
- *   function theme_system_powered_by found in modules/system/system.module
- * THIS IS EXPERIMENTAL AND FOR LEARNING ONLY PLEASE DELETE WHEN DONE PLAYING AROUND!!!
- */
-function stark_idMyGadget_system_powered_by() {
-   return '<span>' . t('Oweredpay by <a href="@poweredby">Drupal</a>', array('@poweredby' => 'https://www.drupal.org')) . '</span>';
-}
-/**
  * Check that we have the device detection object, and if not, display the best error message we can.
  */
 function stark_idMyGadget_page_alter( &$page ) {
@@ -55,8 +47,23 @@ function stark_idMyGadget_check_idMyGadget_installation() {
 
   drupal_set_message( t($jmwsIdMyGadget->errorMessage), 'error' );
 }
+//
+//  ==================================================
+//  ***  EXPERIMENTAL CODE - PLEASE USE OR DELETE  ***
+//  ==================================================
+//
+/**
+ * THIS IS EXPERIMENTAL AND FOR LEARNING ONLY PLEASE DELETE WHEN DONE PLAYING AROUND!!!
+ * Override fcn that returns HTML for the Powered by Drupal text.
+ *   function theme_system_powered_by found in modules/system/system.module
+ * THIS IS EXPERIMENTAL AND FOR LEARNING ONLY PLEASE DELETE WHEN DONE PLAYING AROUND!!!
+ */
+function stark_idMyGadget_system_powered_by() {
+   return '<span>' . t('Oweredpay by <a href="@poweredby">Drupal</a>', array('@poweredby' => 'https://www.drupal.org')) . '</span>';
+}
 
 /**
+ * THIS IS EXPERIMENTAL AND FOR LEARNING ONLY PLEASE DELETE WHEN DONE PLAYING AROUND!!!
  * Ok, we can mess with the username, should we want to at some point
  */
 function stark_idMyGadget_username_NOT( $variables ) {
@@ -68,6 +75,7 @@ function stark_idMyGadget_username_NOT( $variables ) {
 }
 
 /**
+ * THIS IS EXPERIMENTAL AND FOR LEARNING ONLY PLEASE DELETE WHEN DONE PLAYING AROUND!!!
  * Allows us to see what is in $page
  * Some displays that may help troubleshoot issues with device detection
  * Reference: https://api.drupal.org/api/drupal/modules%21system%21system.api.php/function/hook_page_alter/7
