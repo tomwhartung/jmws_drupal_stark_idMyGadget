@@ -109,9 +109,7 @@ global $jmwsIdMyGadget;
       <?php endif; ?>
 
       <div class="debug">
-         <p></p>
-         <p>$jmwsIdMyGadget->usingJQueryMobile: <?php echo $jmwsIdMyGadget->usingJQueryMobile ?></p>
-         <p></p>
+         <?php echo $jmwsIdMyGadget->getSanityCheckString() ?></p>
       </div><!-- .debug -->
 
       <?php print render($page['header']); ?>
