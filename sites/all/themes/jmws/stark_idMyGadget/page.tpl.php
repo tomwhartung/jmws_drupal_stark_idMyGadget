@@ -108,6 +108,12 @@ global $jmwsIdMyGadget;
         <?php endif; ?>
       <?php endif; ?>
 
+      <div class="debug">
+         <p></p>
+         <p>$jmwsIdMyGadget->usingJQueryMobile: <?php echo $jmwsIdMyGadget->usingJQueryMobile ?></p>
+         <p></p>
+      </div><!-- .debug -->
+
       <?php print render($page['header']); ?>
 
     </div></div> <!-- /.section, /#header -->
