@@ -74,9 +74,13 @@
 global $jmwsIdMyGadget;
 ?>
 
-  <div id="page-wrapper"><div id="page">
+  <div id="page-wrapper" <?php echo $jmwsIdMyGadget->jqmDataRole['page'] ?>>
+   <div id="page">
 
-    <div id="header"><div class="section clearfix">
+    <header id="header"
+      <?php echo $jmwsIdMyGadget->jqmDataRole['header'] . ' ' ?>
+      <?php echo $jmwsIdMyGadget->jqmDataThemeAttribute ?>>
+     <div class="section clearfix">
 
       <?php if ( isset($jmwsIdMyGadget) && $jmwsIdMyGadget->isEnabled() ) : ?>
         <?php echo $jmwsIdMyGadget->getLogoNameTitleDescriptionHtml($front_page) ?>
@@ -109,12 +113,13 @@ global $jmwsIdMyGadget;
       <?php endif; ?>
 
       <div class="debug">
-         <?php echo $jmwsIdMyGadget->getSanityCheckString() ?></p>
+         <?php echo $jmwsIdMyGadget->getSanityCheckString() ?>
       </div><!-- .debug -->
 
       <?php print render($page['header']); ?>
 
-    </div></div> <!-- /.section, /#header -->
+     </div>  <!-- /.section -->
+    </header> <!-- /#header -->
 
     <?php if ($main_menu || $secondary_menu): ?>
       <div id="navigation"><div class="section">
@@ -183,4 +188,5 @@ global $jmwsIdMyGadget;
       <?php print render($page['footer']); ?>
     </div></div> <!-- /.section, /#footer -->
 
-  </div></div> <!-- /#page, /#page-wrapper -->
+   </div> <!-- /#page -->
+  </div> <!-- /#page-wrapper -->
