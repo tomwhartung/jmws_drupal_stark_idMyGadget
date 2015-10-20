@@ -157,7 +157,8 @@ global $jmwsIdMyGadget;
 
     <div id="main-wrapper"><div id="main" class="clearfix">
 
-      <div id="content" class="column"><div class="section">
+      <div id="content" class="column" <?php echo $jmwsIdMyGadget->jqmDataRole['content'] ?>>
+       <div class="section">
         <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
         <a id="main-content"></a>
         <?php print render($title_prefix); ?>
@@ -168,7 +169,8 @@ global $jmwsIdMyGadget;
         <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
         <?php print render($page['content']); ?>
         <?php print $feed_icons; ?>
-      </div></div> <!-- /.section, /#content -->
+       </div> <!-- /.section -->
+      </div> <!-- /#content -->
 
       <?php if ($page['sidebar_first']): ?>
         <div id="sidebar-first" class="column sidebar"><div class="section">
@@ -184,9 +186,11 @@ global $jmwsIdMyGadget;
 
     </div></div> <!-- /#main, /#main-wrapper -->
 
-    <div id="footer"><div class="section">
+    <footer id="footer">
+     <div class="section">
       <?php print render($page['footer']); ?>
-    </div></div> <!-- /.section, /#footer -->
+     </div> <!-- /.section -->
+    </footer> <!-- /#footer -->
 
    </div> <!-- /#page -->
   </div> <!-- /#page-wrapper -->
