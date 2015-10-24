@@ -80,6 +80,14 @@ global $jmwsIdMyGadget;
     <header id="header"
       <?php echo $jmwsIdMyGadget->jqmDataRole['header'] . ' ' ?>
       <?php echo $jmwsIdMyGadget->jqmDataThemeAttribute ?>>
+      <?php // wp: if( has_nav_menu('phone-header-nav') && $jmwsIdMyGadget->phoneHeaderNavThisDevice ) : ?>
+      <?php if( $jmwsIdMyGadget->phoneHeaderNavThisDevice ) : ?>
+        <nav data-role="navbar">
+          <?php // wp: wp_nav_menu( array( 'theme_location' => 'phone-header-nav', 'container' => false) ); ?>
+          <?php print render($page['phone_header_nav']); ?>
+        </nav>
+      <?php endif; ?>
+
      <div class="section clearfix">
 
       <?php if ( isset($jmwsIdMyGadget) && $jmwsIdMyGadget->isEnabled() ) : ?>
@@ -113,7 +121,7 @@ global $jmwsIdMyGadget;
       <?php endif; ?>
 
       <div class="debug">
-         <?php echo $jmwsIdMyGadget->getSanityCheckString() ?>
+         <?php echo $jmwsIdMyGadget->getSanityCheckString( $jmwsIdMyGadget->phoneHeaderNavThisDevice ) ?>
       </div><!-- .debug -->
 
       <?php print render($page['header']); ?>
@@ -190,6 +198,7 @@ global $jmwsIdMyGadget;
      <div class="section">
       <?php print render($page['footer']); ?>
      </div> <!-- /.section -->
+     <?php print render($page['phone_footer_nav']); ?>
     </footer> <!-- /#footer -->
 
    </div> <!-- /#page -->
