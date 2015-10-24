@@ -9,13 +9,17 @@ core = 7.x
 stylesheets[all][] = layout.css
 stylesheets[all][] = idMyGadget/idMyGadget.css
 ;
-; Drupal 7 default regions (for reference only):
-; ----------------------------------------------
-;   regions[header] = Header
-;   regions[highlighted] = Highlighted
-;   regions[help] = Help
-;   regions[content] = Content
-;   regions[sidebar_first] = Left sidebar
-;   regions[sidebar_second] = Right sidebar
-;   regions[footer] = Footer
-; Note: defining even just one region explicitly disables all default regions!
+; The original stark lists no regions, because it uses only the defaults
+; Because defining even just one region explicitly disables all default regions,
+;   we now must list the defaults here
+; The new ones are phone_header_nav and phone_footer_nav
+;
+regions[header] = Header
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[content] = Content
+regions[sidebar_first] = Left sidebar
+regions[sidebar_second] = Right sidebar
+regions[footer] = Footer
+regions[phone_header_nav] = Phone Header Nav
+regions[phone_footer_nav] = Phone Footer Nav
