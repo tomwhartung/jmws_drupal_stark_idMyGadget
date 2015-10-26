@@ -193,12 +193,13 @@ global $jmwsIdMyGadget;
 
     </div></div> <!-- /#main, /#main-wrapper -->
 
-    <footer id="footer">
+    <footer id="footer"
+      <?php echo $jmwsIdMyGadget->jqmDataRole['footer'] . ' ' . $jmwsIdMyGadget->jqmDataThemeAttribute ?>>
      <div class="section">
       <?php print render($page['footer']); ?>
      </div> <!-- /.section -->
      <?php if( $jmwsIdMyGadget->phoneFooterNavThisDevice ) : ?>
-       <nav data-role="navbar">
+       <nav data-role="navbar" data-position="fixed">
          <?php print render($page['phone_footer_nav']); ?>
        </nav>
      <?php endif; ?>
